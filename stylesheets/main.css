@@ -1,0 +1,17 @@
+div {
+    width: 350px;
+    height: 50px;
+    margin: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: blue;
+    display: flex;
+}
+
+button {
+    display: flex;
+}
