@@ -5,8 +5,7 @@ function firstNumberSet() {
       var rando = randomFirstNumber();
       nums[rando] = true;
     } 
-    console.log(Object.keys(nums));
-    
+    return Object.keys(nums);
 }
 
 function secondNumberSet() {
@@ -16,10 +15,8 @@ function secondNumberSet() {
       var rando = randomSecondNumber();
       nums[rando] = true;
     } 
-    console.log(Object.keys(nums));
+    return Object.keys(nums);
 }
-
-
 
 function randomFirstNumber(){
   var result = (Math.floor((Math.random() * 69) + 1));
@@ -31,5 +28,37 @@ function randomSecondNumber(){
   return result;
 }
 
-firstNumberSet();
-secondNumberSet();
+
+function buildDiv () {
+    var displayNumbers = document.querySelector('[data-luckyNumbers="target"]');
+    var nums = addNumbers();
+    nums.forEach(function (num) {
+        var element = document.createElement('h2');
+        element.setAttribute('class', 'number');
+        element.textContent = num;
+        displayNumbers.appendChild(element);
+    })
+}
+
+
+function addListener() {
+    var pushButton = document.querySelector('[data-button="trigger"]');
+    pushButton.addEventListener('click', function (event) {
+        event.preventDefault;
+        buildDiv();
+    })
+};
+
+
+function addNumbers() {
+    var allTheNumbers = [];
+    allTheNumbers.push(firstNumberSet());
+    allTheNumbers.push(secondNumberSet());
+    return allTheNumbers;
+};
+
+function doTheThing () {
+    addListener();
+}
+
+doTheThing();
