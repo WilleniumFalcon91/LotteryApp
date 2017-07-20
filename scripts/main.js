@@ -30,35 +30,35 @@ function randomSecondNumber(){
 
 
 function buildDiv1 () {
-    var displayNumbers = document.querySelector('[data-luckyNumbers="target"]');
+    var displayNumbers = $('[data-luckyNumbers="target"]');
     var nums = firstNumberSet();
-    var i = 0;
+    var $i = 0;
     nums.forEach(function (num) {
-        var element = document.querySelectorAll('h2')[i];
+        var $element = $('h2')[$i];
         // element.setAttribute('class', 'number');
-        element.textContent = num;
-        i++;
+        $element.textContent = num;
+        $i++;
         // displayNumbers.appendChild(element);
     })
 }
 
 function buildDiv2 () {
-    var displayNumbers = document.querySelector('[data-powerball="target"]');
-    var nums = secondNumberSet();
-    var i = 0;
+    var $displayNumbers = $('[data-powerball="target"]');
+    var $nums = secondNumberSet();
+    var $i = 0;
     nums.forEach(function (num) {
-        var element = document.querySelectorAll('[data-ballz2="target"]')[i];
+        var $element = $('[data-ballz2="target"]')[$i];
         // element.setAttribute('class', 'number');
-        element.textContent = num;
-        i++;
+        $element.textContent = num;
+        $i++;
         // displayNumbers.appendChild(element);
     })
 }
 
 
 function addListener() {
-    var pushButton = document.querySelector('[data-button="trigger"]');
-    pushButton.addEventListener('click', function (event) {
+    var $pushButton = $('[data-button="trigger"]');
+    $pushButton.addEventListener('click', function (event) {
         event.preventDefault;
         buildDiv1();
         buildDiv2();
